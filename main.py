@@ -200,7 +200,7 @@ async def process_weight(message: Message, state: FSMContext):
         ],
         resize_keyboard=True
     )
-    await message.answer("Шаг 2 из 3:\nУкажите длину пролета (в метрах):", reply_markup=length_kb)
+    await message.answer("Шаг 2 из 3:\nУкажите длину вылета консоли (в метрах):", reply_markup=length_kb)
     
 # ШАГ 3,5: Квиз - Высота пролёта крана
 @dp.message(QuizStates.length)
