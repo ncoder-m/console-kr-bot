@@ -306,7 +306,7 @@ async def process_phone(message: Message, state: FSMContext):
         f"👤 Клиент: {username} (ID: {user_id})\n"
         f"📞 Телефон: {phone_number}\n"
         f"🏗️ Грузоподъемность: {weight}\n"
-        f"📏 Длина пролета: {length}\n"
+        f"📏 Длина вылета: {length}\n"
         f"📏 Высота подъёма: {lifting_height}\n"
         f"📈 Источник рекламы: {source}"
     )
@@ -315,7 +315,7 @@ async def process_phone(message: Message, state: FSMContext):
     try:
         await bot.send_message(
             chat_id=ADMIN_ID, 
-            text=f"🚨 **НОВАЯ ЗАЯВКА НА КОНСОЛЬНЫЙ КРАН!**\n\n{report_text}"
+            text=f"🚨 **НОВАЯ ЗАЯВКА НА КОЗЛОВОЙ КРАН!**\n\n{report_text}"
         )
     except Exception as e:
         logging.error(f"Ошибка отправки в Telegram: {e}")
