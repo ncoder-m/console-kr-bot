@@ -7,7 +7,6 @@ from aiogram.filters import Command, CommandObject
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from datetime import datetime, timedelta , timezone
-from aiogram.utils.backoff import BackoffConfig
 import pytz
 import os
 from dotenv import load_dotenv
@@ -387,7 +386,7 @@ async def cmd_broadcast_unfinished(message: Message):
 async def main():
     await init_db()
     scheduler.start()
-    await dp.start_polling(bot, polling_timeout=15, backoff_config=BackoffConfig(min_delay=0.5, max_delay=5.0))
+    await dp.start_polling(bot, polling_timeout=15)
 
 if __name__ == "__main__":
     try:
