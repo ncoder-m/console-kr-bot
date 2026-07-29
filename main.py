@@ -17,12 +17,16 @@ from email.mime.text import MIMEText
 from email.header import Header
 # 🔥 Импортируем планировщик задач
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from pathlib import Path
+DATA_DIR = Path("/app/data")
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+DB_NAME = DATA_DIR / "users_database.db"
 
 logging.basicConfig(level=logging.INFO)
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_ID = os.getenv("ADMIN_ID")  # !!! ЗАМЕНИТЕ НА ВАШ TELEGRAM ID (можно узнать у @userinfobot)
-DB_NAME = "bot_database.db"
+# DB_NAME = "bot_database.db"
 
 SMTP_HOST = os.getenv("SMTP_HOST")          # Для Яндекса: "smtp.yandex.ru"
 SMTP_PORT = os.getenv("SMTP_PORT")                  # Стандартный защищенный порт SSL
