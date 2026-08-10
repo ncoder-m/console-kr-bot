@@ -181,9 +181,8 @@ async def start_quiz(message: Message, state: FSMContext):
     weight_kb = ReplyKeyboardMarkup(
         keyboard=[
             [KeyboardButton(text="1 тонна"), KeyboardButton(text="2 тонны")],
-            [KeyboardButton(text="3,2 тонны"), KeyboardButton(text="5 тонн")],
-            [KeyboardButton(text="6,3 тонны"), KeyboardButton(text="10 тонн")],
-            [KeyboardButton(text="12,5 тонн"), KeyboardButton(text="16 тонн")]
+            [KeyboardButton(text="3 тонны"), KeyboardButton(text="5 тонн")],
+            [KeyboardButton(text="8 тонны"), KeyboardButton(text="10 тонн")],
         ],
         resize_keyboard=True
     )
@@ -204,7 +203,7 @@ async def process_weight(message: Message, state: FSMContext):
         ],
         resize_keyboard=True
     )
-    await message.answer("Шаг 2 из 3:\nУкажите длину пролета консоли (в метрах):", reply_markup=length_kb)
+    await message.answer("Шаг 2 из 3:\nУкажите длину вылета (в метрах):", reply_markup=length_kb)
     
 # ШАГ 3,5: Квиз - Высота пролёта крана
 @dp.message(QuizStates.length)
@@ -215,9 +214,9 @@ async def process_lifting_height(message: Message, state: FSMContext):
     
     lifting_height_kb = ReplyKeyboardMarkup(
         keyboard=[
-            [KeyboardButton(text="3 метра"), KeyboardButton(text="6 метров")],
-            [KeyboardButton(text="9 метров"), KeyboardButton(text="12 метров")],
-            [KeyboardButton(text="18 метров"), KeyboardButton(text="Без тали")]
+            [KeyboardButton(text="1 метр"), KeyboardButton(text="2 метра")],
+            [KeyboardButton(text="3 метра"), KeyboardButton(text="4 метра")],
+            [KeyboardButton(text="5 метров"), KeyboardButton(text="6 метров")]
         ],
         resize_keyboard=True
     )
