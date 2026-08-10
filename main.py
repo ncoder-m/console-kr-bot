@@ -26,7 +26,7 @@ logging.basicConfig(level=logging.INFO)
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_ID = os.getenv("ADMIN_ID")  # !!! ЗАМЕНИТЕ НА ВАШ TELEGRAM ID (можно узнать у @userinfobot)
-# DB_NAME = "bot_database.db"
+# DB_NAME = "console_users.db"
 
 SMTP_HOST = os.getenv("SMTP_HOST")          # Для Яндекса: "smtp.yandex.ru"
 SMTP_PORT = os.getenv("SMTP_PORT")                  # Стандартный защищенный порт SSL
@@ -168,7 +168,7 @@ async def cmd_start(message: Message, command: CommandObject, state: FSMContext)
         one_time_keyboard=True
     )
     await message.answer(
-        "Приветствуем! Этот бот рассчитает стоимость козлового крана.",
+        "Приветствуем! Этот бот рассчитает стоимость консольного крана.",
         reply_markup=start_kb
     )
 
@@ -197,9 +197,9 @@ async def process_weight(message: Message, state: FSMContext):
     
     length_kb = ReplyKeyboardMarkup(
         keyboard=[
-            [KeyboardButton(text="10 метров"), KeyboardButton(text="12 метров")],
-            [KeyboardButton(text="16 метров"), KeyboardButton(text="20 метров")],
-            [KeyboardButton(text="25 метров"), KeyboardButton(text="32 метра")]
+            [KeyboardButton(text="1 метр"), KeyboardButton(text="2 метра")],
+            [KeyboardButton(text="3 метра"), KeyboardButton(text="4 метра")],
+            [KeyboardButton(text="5 метров"), KeyboardButton(text="6 метров")]
         ],
         resize_keyboard=True
     )
