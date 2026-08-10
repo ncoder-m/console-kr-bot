@@ -20,7 +20,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from pathlib import Path
 DATA_DIR = Path("/app/data")
 DATA_DIR.mkdir(parents=True, exist_ok=True)
-DB_NAME = DATA_DIR / "users_database.db"
+DB_NAME = DATA_DIR / "console_users.db"
 
 logging.basicConfig(level=logging.INFO)
 
